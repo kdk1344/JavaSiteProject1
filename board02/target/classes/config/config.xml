@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    
+	<typeAliases>
+		<typeAlias type="com.example.board02.domain.dto.BoardMemberDTO" alias="memberDTO"/>
+		<typeAlias type="com.example.board02.mapper.BoardMapper" alias="boardmapper"/>
+		<typeAlias type="com.example.board02.mapper.CheckMapper" alias="checkmapper"/>
+		<typeAlias type="com.example.board02.mapper.BookingMapper" alias="bookingmapper"/>
+		
+		<typeAlias type="com.example.board02.domain.dto.BoardVO" alias="boardVO"/>
+		<typeAlias type="com.example.board02.domain.dto.FileVO" alias="fileVO"/>
+		<typeAlias type="com.example.board02.domain.dto.BoardDTO" alias="boardDTO"/>
+		<typeAlias type="com.example.board02.domain.dto.FileDTO" alias="fileDTO"/>
+		<typeAlias type="com.example.board02.domain.dto.BookingDTO" alias="booking"/>
+	</typeAliases>
+</configuration>
