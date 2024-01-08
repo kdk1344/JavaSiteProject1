@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="/resources/assets/css/reset.css" >
 	<link rel="stylesheet" type="text/css" href="/resources/assets/css/style.css" >
 	<link rel="stylesheet" type="text/css" href="/resources/assets/css/wmuSlider.css" >
+	<link rel="stylesheet" href="/resources/assets/css/mains.css?after" />
 	<title>Board1</title>
 </head>
 <style>
@@ -146,6 +147,12 @@ a {
   }
 </style>
 <body>
+	<c:if test= "${id eq null}">
+		<script type="text/javascript">
+			alert("로그인이 필요합니다");
+			location.href="loginForm"
+		</script>	
+	</c:if>	
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- header -->
@@ -412,11 +419,6 @@ function (WeatherResult) {
 });
 </script>
 
-
-
-<!------------------------------------------------------------------------------------------------------>
-<!---------------------------------------- 공통 스크립트------------------------------------------------>
-<!------------------------------------------------------------------------------------------------------>
 
 </body>
 </html>

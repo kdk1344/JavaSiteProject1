@@ -117,6 +117,7 @@ public class LoginController {
 	@GetMapping("/logout")
 	public String gologout(HttpSession session) throws Exception {
 		session.invalidate();
+		log.info(session);
 		return "redirect:/board02/loginForm";
 	}
 	

@@ -9,5 +9,5 @@ public class BookingDTO {
 	private int bookingId;
 	private String userId;
 	private String bookDate;
-	private String name;
+	private String bookname;
 }

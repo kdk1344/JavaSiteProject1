@@ -5,16 +5,24 @@
 
 	<insert id="bookingDo">
 		insert into box_booking(
-		booking_id,buser_id,booking_date, booking_name)
-		values(box_booking_seq.nextval,#{userId},#{bookDate}, #{name})
+		BOOKINGID,USERID,BOOKDATE, BOOKNAME)
+		values(box_booking_seq.nextval,#{userId},#{bookDate}, #{bookname})
 	</insert>
 	
 	<select id="bookingInfo" resultType="booking">
 		SELECT *
 		FROM BOX_BOOKING
-		WHERE BUSER_ID = #{userId}
-</select>
-
+		WHERE USERID = #{userId}
+	</select>
+	<select id="selectId" resultType="string">
+		SELECT BOOkDATE
+		  FROM BOX_BOOKING
+		 WHERE USERID = #{userId}
+	</select>
+	
+	<delete id="bookingdelete">
+		delete from box_booking where USERID = #{userId}
+	</delete>
 	
 </mapper>
 

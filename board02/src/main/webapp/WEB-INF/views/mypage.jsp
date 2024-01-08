@@ -56,6 +56,49 @@ form, fieldset, input, table, tr, th, td {
 	.dropdown:hover .dropdown-content {
 	  display: block;
 	}
+
+	table {
+		margin: 0 0 2rem 0;
+		width: 100%;
+	}
+
+		table tbody tr {
+			border: solid 1px;
+			border-left: 0;
+			border-right: 0;
+		}
+
+		table tbody tr:nth-child(2n + 1) {
+			background-color: rgba(144, 144, 144, 0.075);
+		}
+
+		table td {
+			padding: 0.75rem 0.75rem;
+		}
+
+		table th {
+			font-size: 0.9rem;
+			font-weight: 700;
+			padding: 0 0.75rem 0.75rem 0.75rem;
+			text-align: left;
+		}
+
+	table th {
+		color: #424242;
+	}
+
+	table thead {
+		border-bottom-color: rgba(144, 144, 144, 0.25);
+	}
+	
+	form input{
+	margin-top: 10px;
+    padding: 0.5rem 1rem;
+    font-size: 12px;
+    border: solid 1px;
+    background-color: whitesmoke;
+    cursor: pointer;
+	}
 	
 
 </style>
@@ -72,6 +115,12 @@ form, fieldset, input, table, tr, th, td {
 	<title>Board1</title>
 </head>
 <body>
+	<c:if test= "${id eq null}">
+		<script type="text/javascript">
+			alert("로그인이 필요합니다");
+			location.href="loginForm"
+		</script>	
+	</c:if>	
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- header -->
@@ -198,21 +247,6 @@ form, fieldset, input, table, tr, th, td {
 			<div class="sub_con_area">
 
 
-			
-					
-<script type="text/javascript">
-<!--
-	$(document).ready(
-		function(){
-			if($(".menu3_tab .on").size() == 0){
-				$(".menu3_tab ul > li:eq(0) a").addClass("on");
-			}
-		}
-	);
-//-->
-</script>
-
-
 <!-- 인트로 CSS 추가 -->
 <link rel="stylesheet" type="text/css" href="/resources/assets/css/intro_ver_2016.css" >
 <!-- 인사말 -->
@@ -228,21 +262,26 @@ form, fieldset, input, table, tr, th, td {
 	  			예약 정보가 없습니다.
 	  	</c:when>
 		<c:otherwise>
-			<table>
-			    <tr>
-			        <td>예약자</td>
-			        <td>
-			        	<input type="text" name="name" id="name" value="${booking.name}">
-			        </td>
-			    </tr>
-			    <tr>
-			        <td>예약일</td>
-			        <td>
-			        	<input type="text" name="name" id="name" value="${booking.bookDate}">
-			        </td>
-			    </tr>
-			</table>
-			
+			<div class="table-wrapper">
+				<table>
+					<thead>
+						<tr class="tHead">
+							<th class="writer">예약자</th>
+							<th class="regDate">예약일</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="tbody">
+							<td class="writer">${booking.bookname}</td>
+							<td class="regDate">${booking.bookDate}</td>							
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<form action="/board02/bookDelete" name="deleteForm">
+				<input type="hidden" name="userId" value="${booking.userId}" readonly="readonly">
+				<input type="submit" class="button" value="취소"/>			
+			</form>
 	    </c:otherwise>
 	 </c:choose>
 </div>
@@ -288,167 +327,6 @@ form, fieldset, input, table, tr, th, td {
 			<!-- /foot_cont -->
 		</div>
 		<!-- /footer -->
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-53993743-57', 'auto');
-  ga('send', 'pageview');
-
-</script><!------------------------------------------------------------------------------------------------------>
-<!-------------------------------------------- 공통 ---------------------------------------------------->
-<!------------------------------------------------------------------------------------------------------>
-
-<script type="text/javascript">
-/*  날짜형식 : 2012-5-16 */
-function GlobalDataPopupCheck(startDate,EndDate) {
-	var mydate=new Date();
-	var year=mydate.getFullYear();
-	var month=mydate.getMonth()+1;
-	var day=mydate.getDate();
-
-	var CheckDate =new Date(year,month-1,day);
-
-	var TempStartDate = new Array(3);
-	var TempEndDate = new Array(3);
-	var IsPopup = false;
-
-	if (startDate != "") {
-		ArrstartDate = startDate.split("-");
-
-		TempStartDate[0] = ArrstartDate[0];
-		TempStartDate[1] = parseInt(ArrstartDate[1]) -1;
-		TempStartDate[2] = ArrstartDate[2];
-
-
-		sDate = new Date(TempStartDate[0], TempStartDate[1], TempStartDate[2]);
-	}
-
-	if (EndDate != "") {
-		ArrEndDate = EndDate.split("-");
-
-		TempEndDate[0] = ArrEndDate[0];
-		TempEndDate[1] = parseInt(ArrEndDate[1]) -1;
-		TempEndDate[2] = ArrEndDate[2];
-
-		eDate = new Date(TempEndDate[0], TempEndDate[1], TempEndDate[2]);
-	}
-
-	if (startDate == "" && EndDate != "") {
-		if (eDate.getTime() >= CheckDate.getTime()) {
-			IsPopup = true;
-		}
-	} else if (startDate != "" && EndDate != "") {
-//alert(sDate.getTime())
-//alert(eDate.getTime())
-//alert(CheckDate)
-//alert(CheckDate.getTime())
-//alert(sDate.getTime() <= CheckDate.getTime())
-//alert(eDate.getTime() >= CheckDate.getTime())
-		if (sDate.getTime() <= CheckDate.getTime() && eDate.getTime() >= CheckDate.getTime()) {
-			IsPopup = true;
-		}
-	} else if (startDate != "" && EndDate == "") {
-		if (sDate.getTime() <= CheckDate.getTime()) {
-			IsPopup = true;
-		}
-	}
-//	alert(IsPopup)
-	return IsPopup
-}
-
-function hideMe(no) {
-	document.getElementById("Notice"+no).style.display = "none";
-}
-
-function hideMeMovie(no) {
-	document.getElementById("Notice"+no).style.display = "none";
-	document.getElementById("HidocInterView").controls.stop();
-}
-
-function notice_setCookie( name, value, expiredays ){
-	var todayDate = new Date();
-	todayDate.setDate( todayDate.getDate() + expiredays );
-	document.cookie = name + '=' + escape( value ) + '; path=/; expires=' + todayDate.toGMTString() + ';'
-	return;
-}
-
-function notice_getCookie( name ) {
-	var nameOfCookie = name + "=";
-	var x = 0;
-	while ( x <= document.cookie.length ) {
-		var y = (x+nameOfCookie.length);
-		if ( document.cookie.substring( x, y ) == nameOfCookie ) {
-		if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
-		endOfCookie = document.cookie.length;
-		return unescape( document.cookie.substring( y, endOfCookie ) );
-		}
-		x = document.cookie.indexOf( " ", x ) + 1;
-		if ( x == 0 ) break;
-	}
-	return "";
-}
-</script>
-<!------------------------------------------------------------------------------------------------------>
-<!------------------------------------------------------------------------------------------------------>
-
-
-
-
-
-<!------------------------------------------------------------------------------------------------------>
-<!-------------------------------------------- 공통 ---------------------------------------------------->
-<!------------------------------------------------------------------------------------------------------>
-
-
-
-
-
-	</div>
-	<!-- /wrap -->
-
-<script type="text/javascript" src="/BasicJs/external/jquery.cookie.js"></script>
-<script type="text/javascript">
-<!--
-	function LayerClose(Srno, OneDayClose){
-		if(OneDayClose == "Y"){
-			$.cookie("Popup_" + Srno, "Y", { expires: 1, path: "/", domain: "www.hoonet.co.kr" })
-		}
-
-		$("#LayerPopup_" + Srno).css({ "display": "none"});
-	}
-//-->
-</script>
-<script language="javascript" src="http://lib.drline.net/js/MCircleHomepageInit.js"></script>
-<script language="javascript">
-	var hospiCd = '6338';
-	var hpType = 'FLEXIBLE'; /*EDT=EDT,HEALTHCARE=헬스케어,SEMI=중소병원,FLEXIBLE=플렉서블3,S3=S3,SPECIAL=개별,MOBILE=모바일,ADMIN=관리자*/
-	var memberID = '';
-	var isAdmin = 'False';
-	McircleHomepageCommon(hospiCd, hpType, memberID, isAdmin);
-
-	/*비밀번호 변경 3개월초과자 팝업 알림*/
-	if(InnerGetCookie('SITECMD') == 'PWD_UPDATE_NOTI')
-	{
-		var url = 'http://lib.drline.net/popup/PwdUpdateNoti.asp?hospiCd=' + hospiCd + '&hpType=' + hpType +'&domain='+escape(document.domain);
-		McircleCrossPOP(url, 'POPPwdUpdateNoti', '비밀번호 변경', 600, 536, 30, 30);
-		InnerSetCookie('SITECMD', '', 1); // 비밀번호 변경 알림 Clear
-	}
-</script>
-<script>
-	let nowUtc = Date.now(); 
-	let timeOff = new Date().getTimezoneOffset() * 60000; 
-	let today = new Date(nowUtc - timeOff).toISOString().split("T")[0];
-	document.getElementById("booking-day").setAttribute("min", today);
-</script>
-
-
-<!------------------------------------------------------------------------------------------------------>
-<!---------------------------------------- 공통 스크립트------------------------------------------------>
-<!------------------------------------------------------------------------------------------------------>
 
 </body>
 </html>

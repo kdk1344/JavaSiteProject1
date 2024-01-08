@@ -46,7 +46,7 @@
 #sub_contents .sub_head ul li:first-child { background: none }
 
 /* 서브 컨텐츠 */
-.sub_con_area div, .sub_con_area dl, .sub_con_area dt, .sub_con_area dd, .sub_con_area h1, .sub_con_area h2, .sub_con_area h3, .sub_con_area h4, .sub_con_area h5, .sub_con_area h6, .sub_con_area pre, .sub_con_area legend, .sub_con_area p, .sub_con_area form, .sub_con_area fieldset, .sub_con_area input, .sub_con_area textarea, .sub_con_area select, .sub_con_area blockquote, .sub_con_area th, .sub_con_area td { font-family: 'Nanum Gothic', sans-serif !important; line-height: 1.5; }
+.sub_con_area div, .sub_con_area dl, .sub_con_area dt, .sub_con_area dd, .sub_con_area h1, .sub_con_area h2, .sub_con_area h3, .sub_con_area h4, .sub_con_area h5, .sub_con_area h6, .sub_con_area pre, .sub_con_area legend, .sub_con_area p, .sub_con_area form, .sub_con_area fieldset, .sub_con_area input, .sub_con_area textarea, .sub_con_area select, .sub_con_area blockquote, .sub_con_area th, .sub_con_area td { font-family: 'Nanum Gothic', sans-serif !important; line-height: 1.5; vertical-align: middle;}
 .sub_con_area .sub_article { margin-top: 6em; margin-bottom: 6em; color: #4e4e4e; overflow: hidden; }
 .sub_article h3.tit { font-size: 1.9em; font-weight: bold; margin-bottom: 1em; }
 .sub_article p { font-size: 1.2em; line-height: 1.5; margin-bottom: 2em; }

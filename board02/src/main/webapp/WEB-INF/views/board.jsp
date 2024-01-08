@@ -63,6 +63,12 @@
 	<title>Board1</title>
 </head>
 <body>
+	<c:if test= "${id eq null}">
+		<script type="text/javascript">
+			alert("로그인이 필요합니다");
+			location.href="loginForm"
+		</script>	
+	</c:if>
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- header -->
@@ -76,6 +82,9 @@
 					<!-- member -->
 					<ul class="member">
 						<li><a href="/board02/logout">LOGOUT</a></li>
+					</ul>
+					<ul class="member">
+						<li><span>${id}</span>님 환영합니다</li>
 					</ul>
 					<ul class="member">
 						<li><a href="/board02/mypage">MYPAGE</a></li>

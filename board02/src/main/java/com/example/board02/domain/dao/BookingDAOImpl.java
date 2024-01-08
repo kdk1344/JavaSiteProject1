@@ -40,9 +40,22 @@ public class BookingDAOImpl implements BookingDAO {
 			dto = bookmapper.bookingInfo(userId);
 			log.info(dto);
 		} catch (Exception e) {
+			log.info("dto");
 			e.printStackTrace();
 		}
 		return dto;
+	}
+	
+	@Override
+	public String selectId(String id) {
+		log.info("Service :: selectId...................");
+		return bookmapper.selectId(id);
+	}
+
+	@Override
+	public boolean bookDelete(String id) {
+		log.info("id test...");
+		return bookmapper.bookingdelete(id) != 0;
 	}
 
 

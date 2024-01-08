@@ -17,6 +17,8 @@ import lombok.extern.log4j.Log4j;
 @Mapper
 public interface BookingMapper {
 	
-	public void bookingDo(BookingDTO bookingDto );
+	public void bookingDo(BookingDTO bookingDto);
 	public BookingDTO bookingInfo(String userId);
+	public String selectId(String id);
+	public int bookingdelete(String id);
 }

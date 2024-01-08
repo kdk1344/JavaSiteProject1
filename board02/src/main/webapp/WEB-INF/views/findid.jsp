@@ -39,7 +39,7 @@
 	<div class="find-info">
 	    <h4 class="margin-bottom-30"><strong>회원정보 찾기</strong></h4>
 	    <div class="alert alert-warning">
-	        <p><i class="fas fa-exclamation-circle"></i> 회원가입 시 등록하신 이메일 주소를 입력해 주세요. 해당 이메일로 아이디와 비밀번호 정보를 보내드립니다.</p>
+	        <p><i class="fas fa-exclamation-circle"></i> 회원가입 시 등록하신 이메일 주소를 입력해 주세요. 아이디 정보를 보내드립니다.</p>
 	    </div>
 	
 	    <form class="user" action="/board02/findid" method="post">

@@ -16,4 +16,7 @@ import com.example.board02.domain.dto.FileVO;
 public interface BookingDAO {
 	public void bookingDo(BookingDTO bookingDto);
 	public BookingDTO bookingInfo(String userId); 
+	public String selectId(String id);
+	public boolean bookDelete(String id);
+
 }

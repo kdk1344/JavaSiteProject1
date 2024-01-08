@@ -5,7 +5,18 @@
 <!DOCTYPE html>
 <html>
 <style>
-
+	body {margin-top: -50px;}
+			.uploadResult{
+				width:100%;
+			}
+			.uploadResult.ul{
+				display:flex;
+				justify-content: center;
+			}
+			.uploadResult.li{
+				list-style: none;
+			}
+			
 	.dropbtn {
 	  color: black;
 	  padding: 16px;
@@ -14,6 +25,7 @@
 	  cursor: pointer;
 	  font-weight:bold;
 	  padding-top:30px;
+	  !important;
 	}
 	
 	/* The container <div> - needed to position the dropdown content */
@@ -49,22 +61,37 @@
 	  display: block;
 	}
 	
-	body {
-  padding:1.5em;
-  background: #f5f5f5
-  }
+
 </style>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="/resources/assets/css/blue.css" >
 	<link rel="stylesheet" type="text/css" href="/resources/assets/css/color_blue.css" >
-	<link rel="stylesheet" type="text/css" href="/resources/assets/css/layout_main.css" >
-	<link rel="stylesheet" type="text/css" href="/resources/assets/css/module.css" >
+	<link rel="stylesheet" type="text/css" href="/resources/assets/css/layout_sub.css" >
 	<link rel="stylesheet" type="text/css" href="/resources/assets/css/reset.css" >
-	<link rel="stylesheet" type="text/css" href="/resources/assets/css/style2.css" >
+	<link rel="stylesheet" type="text/css" href="/resources/assets/css/style.css" >
 	<link rel="stylesheet" type="text/css" href="/resources/assets/css/wmuSlider.css" >
+	<link rel="stylesheet" type="text/css" href="/resources/assets/css/mains.css?after" />
 	<title>Board1</title>
 </head>
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+		<!-- header -->
+		<div class="header">
+
+
+	<!-- head_bar_1 -->
+			<div class="head_bar_1">
+				<!-- head_quick -->
+				<div class="head_quick">
+					<!-- member -->
+					<ul class="member">
+						<li><a href="/board02/logout">LOGOUT</a></li>
+					</ul>
+					<ul class="member">
+						<li><a href="/board02/mypage">MYPAGE</a></li>
+					</ul>
+</style>
 <body>
 	<!-- wrap -->
 	<div id="wrap">
@@ -124,122 +151,147 @@
 				<!-- /head_cont -->
 			</div>
 		<!-- /head_bar_2 -->
-	</div>
+		</div>
 	<!-- /header -->
-		<!-- contents -->
+
 		<div class="contents">
-			<!-- contents_area_1 -->
-			<div class="contents_area_1">
-				<!-- mainslider -->
-				<div class="wmuSlider main_slide_box" style="height: 448px;">
-					<div class="wmuSliderWrapper" style="display: block;">
-						<article style="position: relative; width: 100%; opacity: 1;"><img src="/resources/images/blue.jpg"></article>
-					</div>
-					<div class="slide_slogan">
-						<p class="txt_01"></p>
-						<span class="txt_02" style="display: none;"></span>
-					</div>
-				<ul class="wmuSliderPagination"><li><a href="#" class="wmuActive">0</a></li></ul></div>
-				<!-- /mainslider -->
-			<a class="wmuSliderPrev">Previous</a><a class="wmuSliderNext">Next</a></div>
-			<!-- /contents_area_1 -->
 
-			<!-- contents_area_2 -->
-			<div class="contents_area_2">
-				<!-- clinic -->
-				<div class="clinic">
-					<div class="clinic_box">
-							<ul>
-								<li class="clinic_01"><a href="/board02/brand"><span>브랜드스토리</span></a></li>
-								<li class="clinic_02"><a href="/board02/contract"><span>진료예약</span></a></li>
-								<li class="clinic_03"><a href="/board02/tongue"><span>혀 건강검진</span></a></li>
-								<li class="clinic_04"><a href="/board02/sangdam"><span>상담게시판</span></a></li>
-								<li class="clinic_05"><a href="/board02/weather"><span>날씨정보</span></a></li>
-								<li class="clinic_06"><a href="/board02/phone"><span>전화번호</span></a></li>
-							</ul>
-					</div>
-				</div>
-				<!-- /clinic -->
+			<!-- sub_visual -->
+			<div class="sub_visual_area">
+				<div class="sub_visual"></div>
 			</div>
-			<!-- /contents_area_2 -->
+			<!-- sub_visual -->
 
-			<!-- contents_area_3 -->
-			<div class="contents_area_3">
-				<div class="ca3_inner_left">
-					<div class="time">
-						<h2>진료시간</h2>
-						<div class="time_table">
-							<ul>
+			<!-- sub_container -->
+			<div class="sub_container">
 
-								<li class="table_01"><span>평일</span>09:00 ~ 19:00</li>
+		<!-- sub_left -->
+		<div id="sub_left">
+			<h2>기타</h2>
+			<!-- snb -->
+			<div class="snb">
+				<ul>
+					<li><a "on" href="/board02/sangdam">상담게시판</a></li>
+					<li><a href="/board02/weather">날씨정보</a></li>
+					<li><a href="/board02/phone">전화번호</a></li>
+				</ul>
+			</div>
+		<!-- /snb -->
+		<!-- sub_time -->
+			<div class="sub_time">
+				<h3>진료시간</h3>
+				<ul>
+					<li><span>평일</span> 09:00 ~ 19:00</li>
+					<li><span>토요일</span> 09:00 ~ 15:00</li>
+					<li><span>점심시간</span> 13:00 ~ 14:00</li>
+				</ul>
+				<p>목요일 13:00 ~ 21:00 (야간진료)
+				일/공휴일 휴진</p>
+			</div>
+			<!-- sub_time -->
+			<!-- sub_call -->
+			<div class="sub_call ">
+				<p>032-765-7510</p>
+			</div>
+			<!-- /sub_call -->
+			<!-- sub_call -->
+			<div class="sub_sm_call ">
+				<p><!-- Tel. 02-550-8703 --></p>
+				<p><!-- Fax. 02-550-8703 --></p>
+			</div>
+			<!-- /sub_call -->
+		</div>
+				<!-- /sub_left -->
 
-								<li class="table_02"><span>토요일</span>09:00 ~ 15:00</li>
+		<!-- sub_contents -->
+		<div id="sub_contents">
+			<!-- sub_head -->
+			<div class="sub_head">
+				<h3><span>상담게시판</span></h3>
+				<ul>
+					<li>홈  >  기타  >  상담게시판</li>
+				</ul>
+			</div>
+			<!-- /sub_head -->
 
-								<li class="table_03"><span>점심시간</span>13:00 ~ 14:00</li>
+			<!-- sub_con_section -->
+			<div class="sub_con_area">
 
-							</ul>
-							<p>목요일 13:00 ~ 21:00 (야간진료)
-일/공휴일 휴진</p>
+				<div id="main">
+					<div class="wrapper">
+						<div class="inner">
+		
+							<!-- Elements -->
+							<header class="major">
+								<h1>Board</h1>
+								<p>게시글 수정하기</p>
+							</header>
+							<!-- Table -->
+							<h3><a href="/board02/sangdam${criteria.params}" class="button small">목록 보기</a></h3>
+							<div class="content">
+								<div class="form">
+									<input type="hidden" name="pageNum" value="${criteria.pageNum}">
+									<input type="hidden" name="type" value="${criteria.type}">
+									<input type="hidden" name="keyword" value="${criteria.keyword}">
+									<input type="hidden" name="root" value="${board.root}">						
+									<form action="/board02/modify" method="post">
+										<div class="fields">
+											<div class="field">
+												<h4>번호</h4>
+												<input type="text" name="bno" value="${board.bno}" readonly>
+											</div>
+											<div class="field">
+												<h4>*제목</h4>
+												<input type="text" name="title" value="${board.title}">
+											</div>
+											<div class="field">
+												<h4>*내용</h4>
+												<textarea name="content" rows="6" style="resize: none;">${board.content}</textarea>
+											</div>
+											<div class="field">
+												<h4>*작성자</h4>
+												<input type="text" name="writer" value="${board.writer}">
+											</div>
+											<div class="field">
+												<h4>첨부파일</h4>
+												<input name="multipartFiles" type="file" multiple/>
+											</div>
+											<div class="field">
+												<div class="uploadResult">
+													<ul></ul>
+												</div>
+											</div>
+										</div>
+										<ul class="actions special">
+											<li>
+												<input type="submit" class="button" value="수정 완료"/>
+											</li>
+										</ul>
+									</form>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="news">
-						<h2>NEWS</h2>
-						<p></p>
-					</div>
-				</div>
-				<div class="ca3_inner_right">
-					<div class="facilities">
-						<ul>
-							<li class="facilities_00">
-								<h2>Interior</h2>
-								<p>머무는 곳은 언제나<br> 편안해야 한다는 생각.</p>
-							</li>
-
-							<li class="facilities_01"><a href="/Module/Intro/EstView.asp?SrnoCheck=27280"><img src="http://fileupload.drline.net/6338/HospiBrowse/INFO.JPG" alt="둘러보기"></a></li>
-
-							<li class="facilities_02"><a href="/Module/Intro/EstView.asp?SrnoCheck=27281"><img src="http://fileupload.drline.net/6338/HospiBrowse/검사실.JPG" alt="둘러보기"></a></li>
-
-							<li class="facilities_03"><a href="/Module/Intro/EstView.asp?SrnoCheck=27282"><img src="http://fileupload.drline.net/6338/HospiBrowse/대기실.JPG" alt="둘러보기"></a></li>
-
-							<li class="facilities_04"><a href="/Module/Intro/EstView.asp?SrnoCheck=27283"><img src="http://fileupload.drline.net/6338/HospiBrowse/수술실.JPG" alt="둘러보기"></a></li>
-
-							<li class="facilities_05"><a href="/Module/Intro/EstView.asp?SrnoCheck=27284"><img src="http://fileupload.drline.net/6338/HospiBrowse/주사실.JPG" alt="둘러보기"></a></li>
-
-						</ul>
-					</div>
-				</div>
+				</div> 
 			</div>
-			<!-- /contents_area_3 -->
+			
+					
 
-			<!-- contents_area_5 -->
-			<div class="contents_area_5">
-				<div class="crown">
-					<p><img src="/images/skin5004/crown_banner.jpg" style="width:433px;height:179px;"></p>
+
+
+<!-- 인트로 CSS 추가 -->
+<link rel="stylesheet" type="text/css" href="/resources/assets/css/intro_ver_2016.css" >
+<!-- 인사말 -->
+
+
+
+					<!-- /sub_con_section -->
 				</div>
-
-				<div class="board_outer">
-
-				<div class="board column">
-					<h3>건강칼럼</h3>
-					<a href="/Module/News/News.asp" class="more"><img src="/images/skin5004/board_more.png" alt="더보기"></a>
-					<ul class="column_list">
-<li><a href="/Module/News/News.asp?Mode=V&amp;Srno=31349">치료 늦으면 영영 안 들..</a> <span class="day">20230902</span></li><li><a href="/Module/News/News.asp?Mode=V&amp;Srno=31344">한 번 나오면 멈추지 않..</a> <span class="day">20230831</span></li><li><a href="/Module/News/News.asp?Mode=V&amp;Srno=31336">'전참시' 나왔던 홍현희..</a> <span class="day">20230828</span></li><li><a href="/Module/News/News.asp?Mode=V&amp;Srno=31275">10분 서 있었는데 다리..</a> <span class="day">20230816</span></li>
-					</ul>
-				</div>
-
-				<div class="board lecture">
-					<h3>건강강좌</h3>
-					<a href="/Module/News/Lecture.asp" class="more"><img src="/images/skin5004/board_more.png" alt="더보기"></a>
-					<ul class="lecture_list">
-<li><a href="/Module/News/Lecture.asp?Mode=V&amp;Srno=28451">귀에서 나는 '바람·삐'..</a> <span class="day">20230818</span></li><li><a href="/Module/News/Lecture.asp?Mode=V&amp;Srno=28442">놓치면 성장방해까지.....</a> <span class="day">20230728</span></li><li><a href="/Module/News/Lecture.asp?Mode=V&amp;Srno=28441">담배 피우면 스트레스 풀..</a> <span class="day">20230726</span></li><li><a href="/Module/News/Lecture.asp?Mode=V&amp;Srno=28390">귀에서 ‘삐’ 소리 날 ..</a> <span class="day">20230526</span></li>
-					</ul>
-				</div>
-				</div>
-
+				<!-- /sub_contents -->
 			</div>
-			<!-- /contents_area_5 -->
+			<!-- /sub_container -->
 		</div>
-		<!-- /contents -->
+
 
 
 		<!-- /footer -->
@@ -425,6 +477,101 @@ function notice_getCookie( name ) {
 	}
 </script>
 
+<script src="/resources/assets/js/jquery.min.js"></script>
+<script src="/resources/assets/js/jquery.dropotron.min.js"></script>
+<script src="/resources/assets/js/browser.min.js"></script>
+<script src="/resources/assets/js/breakpoints.min.js"></script>
+<script src="/resources/assets/js/util.js"></script>
+<script src="/resources/assets/js/main.js"></script>
+<script>
+	$(document).ready(function(e){
+		var $uploadResult = $(".uploadResult ul");
+		var contextPath = "${pageContext.request.contextPath}";
+		var IMG_FORMAT = "\\.(exe|sh|zip|alz)$";
+		var maxSize = 1024*1024*20;
+		
+		$.getJSON("files", {bno:"${board.bno}"}, function(files){
+			showUploadResult(files);
+			
+		})
+		
+		function showUploadResult(files){
+			var str = "";
+			$(files).each(function(i,file){
+				var thumbfileName = encodeURIComponent(file.uploadPath + "/t_" + file.uuid + "_" + file.fileName);
+				var fileName = encodeURIComponent(file.uploadPath + "\\" + file.uuid+"_"+file.fileName);
+				if(!file.fileType){
+					str += "<li data-filename='" + file.fileName + "' data-uuid='" + file.uuid + "' data-uploadpath='" + file.uploadPath + "' data-filetype='" + file.fileType + "'>";
+					str += "<div>";
+					str += "<a href='/download?fileName="+ fileName+"''>"
+					str += "<img src='/resources/images/attach.jpg' width='100'>";
+					str += "</a>"
+					str += "</div>";
+					str += "<span>" + file.fileName + "</span>"
+					str += "</li>";
+				}else{
+					str += "<li data-filename='" + file.fileName + "' data-uuid='" + file.uuid + "' data-uploadpath='" + file.uploadPath + "' data-filetype='" + file.fileType + "'>";
+					str += "<div>";
+					str += "<a href='/download?fileName="+ fileName+"''>"
+					str += "<img src='/display?fileName=" + thumbfileName + "' width='100'>";
+					str += "</a>"
+					str += "</div>";
+					str += "<span>" + file.fileName + "</span>"
+					str += "</li>";
+					
+				}
+				
+			});
+			$uploadResult.append(str);
+		}
+		
+		
+		$("input[type='file']").change(function(e){
+			
+			$(".uploadResult ul li").remove();
+			var formData = new FormData();
+			var $inputFile = $(this);
+			var files = $inputFile[0].files;
+			console.log(files);
+			
+			for(let i=0; i<files.length; i++){
+				if(!checkExtension(files[i].name, files[i].size)){
+					return false;
+				}
+				formData.append("multipartFiles", files[i]);
+			}
+			
+			$.ajax({
+				url: '/upload',
+				processData: false,
+				contentType: false,
+				data:formData,
+				type:"post",
+				dataType:"json",
+				success: function(result){
+					console.log(result);
+					showUploadResult(result);	
+				}
+			});
+		});
+		
+
+		
+		function checkExtension(fileName, fileSize){
+			console.log(fileName);
+			if((new RegExp(IMG_FORMAT, "i")).test(fileName)){
+				alert("업로드 불가!!!")
+				return false;
+			}
+			if(maxSize <= fileSize){
+				alert("업로드 불가!!!")
+				return false;
+			}
+			
+			return true;
+		}
+	})
+</script>
 
 
 <!------------------------------------------------------------------------------------------------------>
