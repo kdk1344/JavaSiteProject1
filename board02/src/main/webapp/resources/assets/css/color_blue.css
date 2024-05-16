@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/* Color - Blue */
+.head_bar_1 .head_quick .member li a {
+	color: #868f9b;
+}
+.head_bar_2 .head_cont .nav .gnb .dropdown .dropdown-content .lnb a:hover {
+	color: #3383c6;
+}
+#all_menu_gnb #all_gnb {
+	background-color: #b9c2c9;
+}
+#all_menu_gnb #all_gnb .nav li .list .nav_title {
+	color: #ffffff;
+}
+.contents_area_1 .main_slide_box .slide_slogan .txt_02 {
+	background: #3f4d70;
+}
+
+.contents_area_2 .clinic .clinic_box ul {
+	border: none;
+	background: url('/resources/images/clinic_bg.png') no-repeat center;
+}
