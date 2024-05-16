@@ -24,6 +24,7 @@ public class CheckController {
 	private CheckDAO checkdao;
 	
 	
+	//아이디 확인 기능
 	@PostMapping("/findid")
 	public String searchId(HttpServletRequest request, Model model,BoardMemberDTO boardmemberdto,
 			@RequestParam String email) {
@@ -41,6 +42,7 @@ public class CheckController {
 		return "idresult";
 	}
 	
+	//비밀번호 확인 기능
 	@PostMapping("/findpw")
 	public String findPwdCheck(HttpServletRequest request, Model model,
 			@RequestParam String id, @RequestParam String email,

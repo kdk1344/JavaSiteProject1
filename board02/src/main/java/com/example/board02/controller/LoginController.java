@@ -32,49 +32,73 @@ public class LoginController {
 	@Autowired
 	private BoardMemberDAO boardmemberDAO;
 	
-	
+	//로그인 화면
 	@GetMapping("/loginForm")
 	public String goLoginForm() {
 		return "login";
 	}
 	
+	//예약 게시판
 	@GetMapping("/contract")
 	public String gocontract() {
 		return "contract";
 	}
 	
+	//글 삭제
+	@GetMapping("/inform")
+	public String myInfoModify(HttpSession session, Model model) {
+		return "inform";
+	}
+	
+	//정보 수정
+	@PostMapping("/inform")
+	public String modify(BoardMemberDTO boarddto){
+		log.info("!!!!!");
+		int result = boardmemberDAO.modifySave(boarddto);
+		if(result==1) {
+			return "redirect:inform";
+		}
+		return "redirect:inform";
+	}
 	
 	
+	//혀 사진
 	@GetMapping("/tongue")
 	public String gotongue() {
 		return "tongue";
 	}
 	
+	//날씨 정보
 	@GetMapping("/weather")
 	public String goweather() {
 		return "weather";
 	}
 	
+	//전화 정보
 	@GetMapping("/phone")
 	public String gophone() {
 		return "phone";
 	}
 	
+	//비밀번호 찾기
 	@GetMapping("/findpw")
 	public String findpw() {
 		return "findpw";
 	}
 	
+	//메인 화면
 	@GetMapping("/list")
 	public String golist() {
 		return "board";
 	}
 	
+	//아이디 찾기
 	@GetMapping("/findid")
 	public String findid() {
 		return "findid";
 	}
 	
+	//로그인 확인
 	@PostMapping("/login")
 	public String login(BoardMemberDTO boarddto, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
 		HttpSession session = req.getSession();
@@ -92,28 +116,31 @@ public class LoginController {
 			}
 		}
 	
+	//회원 가입
 	@GetMapping("/join")
 	public String gojoin() {
 		return "join";
 	}
 	
+	//회사 브랜드
 	@GetMapping("/brand")
 	public String gobrand() {
 		return "brand";
 	}
 	
-	
-	
+	//길 안내
 	@GetMapping("/guide")
 	public String goguide() {
 		return "guide";
 	}
 	
+	//진료 정보
 	@GetMapping("/jinryo")
 	public String gojinryo() {
 		return "jinryo";
 	}
 	
+	//로그 아웃 기능
 	@GetMapping("/logout")
 	public String gologout(HttpSession session) throws Exception {
 		session.invalidate();
@@ -121,23 +148,14 @@ public class LoginController {
 		return "redirect:/board02/loginForm";
 	}
 	
+	//회원 가입 기능
 	@PostMapping("/join")
 	public String join(BoardMemberDTO boardmemberDTO) {
 		log.info("/join : " + boardmemberDTO);
 		boardmemberDAO.join(boardmemberDTO);
-		
-//		Flash라는 영역은 Session에 생기고, redirect로 전송할 때 request영역이 초기화 된다.
-//		초기화 되기 전에 Flash영역에 데이터를 저장해놓고, 초기화된 후 Flash영역에서 데이터를 가지고 온다.
-//		데이터를 가져왔다면, Flash 영역에 있던 데이터는 없어진다.
-//		redirect로 전송할 때에는 경로 앞에 "redirect:"을 붙여준다.
+
 		return "redirect:/board02/loginForm";
 	}
 	
-//	@PostMapping("/login")
-//	public String login(@ModelAttribute("id") String id, String pw) {
-//		if(id.equals("admin")) {
-//			return "admin";
-//		}
-//		return "user";
-//	}
+
 }

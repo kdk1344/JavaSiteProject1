@@ -1,24 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
 <!DOCTYPE html>
 <html>
 <style>
-
-	body {margin-top: -50px;}
-	div.line {border-bottom: 1px solid #ff8b77;}
-	h4.reply-h4 {margin-bottom: 0;}
-	.uploadResult{
-		width:100%;
-	}
-	.uploadResult.ul{
-		display:flex;
-		justify-content: center;
-	}
-	.uploadResult.li{
-		list-style: none;
-	}
+  	label {
+    display: block;
+    margin-bottom: 5px;
+}
+form, fieldset, input, table, tr, th, td {
+    margin: 0;
+    padding: 0;
+}
 	.dropbtn {
 	  color: black;
 	  padding: 16px;
@@ -27,7 +20,6 @@
 	  cursor: pointer;
 	  font-weight:bold;
 	  padding-top:30px;
-	  !important;
 	}
 	.dropdown {
 	  position: relative;
@@ -52,17 +44,40 @@
 	.dropdown:hover .dropdown-content {
 	  display: block;
 	}
+
+
 	
+	form input{
+	margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 12px;
+    border: solid 1px;
+    background-color: whitesmoke;
+    cursor: pointer;
+    margin-bottom: 10px;
+	}
+	form label {
+    font-size: 14px;
+    font-weight: bold;
+    }
+    form button {
+    border: solid 1px;
+    padding: 5px 10px;
+    background-color: whitesmoke;
+    cursor: pointer;
+    }
 
 </style>
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/resources/assets/css/blue.css" >
 	<link rel="stylesheet" type="text/css" href="/resources/assets/css/color_blue.css" >
+	<link rel="stylesheet" type="text/css" href="/resources/assets/css/layout_main.css" >
 	<link rel="stylesheet" type="text/css" href="/resources/assets/css/layout_sub.css" >
+	<link rel="stylesheet" type="text/css" href="/resources/assets/css/module.css" >
 	<link rel="stylesheet" type="text/css" href="/resources/assets/css/reset.css" >
 	<link rel="stylesheet" type="text/css" href="/resources/assets/css/style.css" >
 	<link rel="stylesheet" type="text/css" href="/resources/assets/css/wmuSlider.css" >
-	<link rel="stylesheet" href="/resources/assets/css/mains.css?after" />
 	<title>Board1</title>
 </head>
 <body>
@@ -128,9 +143,8 @@
 					<h2>기타</h2>
 					<div class="snb">
 						<ul>
-							<li><a "on" href="/board02/sangdam">상담게시판</a></li>
-							<li><a href="/board02/weather">날씨정보</a></li>
-							<li><a href="/board02/phone">전화번호</a></li>
+							<li><a href="/board02/mypage">예약정보</a></li>
+							<li><a "on" href="/board02/inform">정보수정</a></li>
 						</ul>
 					</div>
 					<div class="sub_time">
@@ -153,65 +167,31 @@
 				</div>
 				<div id="sub_contents">
 					<div class="sub_head">
-						<h3><span>상담게시판</span></h3>
+						<h3><span>정보수정</span></h3>
 						<ul>
-							<li>홈  >  기타  >  상담게시판</li>
+							<li>마이페이지  >  정보수정</li>
 						</ul>
 					</div>
-					<div class="sub_con_area">
-						<div id="main">
-							<div class="wrapper">
-								<div class="inner">
-									<header class="major">
-										<h1>Board</h1>
-										<p>게시글 상세보기</p>
-									</header>
-									<!-- Table -->
-									<h3><a href="/board02/sangdam${criteria.params}" class="button small">목록 보기</a></h3>
-									<div class="content">
-										<div class="form">
-											<form action="/board02/remove" name="deleteForm">
-												<div class="fields">
-													<div class="field">
-														<h4>번호</h4>
-														<input type="text" name="bno" value="${board.bno}" readonly>
-													</div>
-													<div class="field">
-														<h4>제목</h4>
-														<input type="text" name="title" value="${board.title}" readonly>
-													</div>
-													<div class="field">
-														<h4>내용</h4>
-														<textarea type="text" name="content" rows="6" style="resize:none;" readonly> "${board.content}"</textarea>
-													</div>
-													<div class="field">
-														<h4>작성자</h4>
-														<input type="text" name="writer" value="${board.writer}" readonly>
-													</div>
-													<div class="field">
-														<h4>첨부파일</h4>
-														<div class="uploadResult">
-															<ul></ul>
-														</div>
-													</div>
-												</div>
-												<ul class="actions special">
-													<li>
-														<input type="button" class="button" value="답글" onclick="location.href='/board02/answer${criteria.params}&bno=${board.bno}'"/>
-														<input type="button" class="button" value="수정" onclick="location.href='/board02/modify${criteria.params}&bno=${board.bno}'"/>
-														<input type="submit" class="button" value="삭제"/>
-													</li>
-												</ul>
-											</form>
-										</div>
-									</div>
-								</div>
+						<div class="sub_con_area">
+							<div class="cms_skin">    
+								<form action="/board02/inform" method="post">
+									<label for="id">아이디</label>
+										<input type="text" name="id" id="id" value="${id}" readonly> 
+								    <label for="pwd">비밀번호</label>
+								    	<input type="password" name="pw" id="pw" class="user-margin" placeholder="4~12자의 영문 대소문자와 숫자만 입력">
+								   	<label for="name">이름</label>
+								    	<input type="text" name="name" id="name"> 
+								    <label for="email">이메일</label> 
+								    	<input type="email" name="email" id="email">
+								    <li>
+								    	<button type="submit" id="save-btn">변경 내용 저장</button>
+								    </li>
+								</form>
 							</div>
-						</div> 
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 		<!-- /footer -->
 		<div class="footer">
 			<!-- foot_cont -->
@@ -228,13 +208,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- /footer -->
 	</div>
-<script src="/resources/assets/js/jquery.min.js"></script>
-<script src="/resources/assets/js/jquery.dropotron.min.js"></script>
-<script src="/resources/assets/js/browser.min.js"></script>
-<script src="/resources/assets/js/breakpoints.min.js"></script>
-<script src="/resources/assets/js/util.js"></script>
-<script src="/resources/assets/js/main.js"></script>
+		<!-- /footer -->
 </body>
 </html>

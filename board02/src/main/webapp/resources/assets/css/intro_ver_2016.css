@@ -41,7 +41,6 @@
 .guide { width: 100%; line-height: 1.5; }
 .guide:after, .guide:before { content: " "; display: table }
 .guide:after { clear: both; }
-.guide .time { background: url('/images/skin5001/intro_0201.png')no-repeat center; background-size: cover; padding-top: 60px; padding-bottom: 90px; }
 .guide .time p.information { font-size: 24px; text-align: center; color: #ffffff; margin-bottom: 30px; }
 .guide .time p.information em { color: #64f2ff; }
 .guide .time .inner { background: #ffffff; width: 600px; margin: 0 auto; padding: 30px 0; }
@@ -59,40 +58,3 @@
 .guide .guide_table table tr th { vertical-align: middle; background: url('/images/skin5001/intro_0203.png') no-repeat 5px center; }
 .guide .guide_table table tr th, .guide .guide_table table tr td { padding: 15px 20px; font-size: 16px; }
 
-/*둘러보기*/
-.est { width: 100%; line-height: 1.5; }
-.est:after, .est:before { content: " "; display: table }
-.est:after { clear: both; }
-.est .space { padding: 50px 40px; background: #f1f1f1 url('/images/skin5001/intro_0301.png') no-repeat right bottom; }
-.est .space h3 { font-size: 28px; font-weight: 400; }
-.est .space h3 em { color: #12b0be; }
-.est .space p.effort { position: relative; font-size: 14px; margin-top: 10px; color: #4e4e4e; margin-bottom: 10px; }
-.est .space p.effort:after { content: " "; display: block; position: absolute; left: 0; bottom: -20px; background: #d1d1d1; width: 50px; height: 1px; }
-.est .facility { margin-top: 50px; }
-.est .facility:after, .est .facility:before { content: " "; display: table; }
-.est .facility:after { clear: both; }
-.est .facility ul.floor { float: left; width: 25%; margin-right: 5%; }
-.est .facility ul.floor h3 { font-size: 22px; font-weight: 600; color: #4c4c4c; margin-bottom: 20px; font-weight: 400; }
-.est .facility ul.floor li { border-bottom: 1px solid #e7e7e7; }
-.est .facility ul.floor li a { display: block; padding: 10px 30px; font-size: 13px; text-decoration: none; }
-.est .facility ul.floor li a:hover { color: #ffffff; background: #5e5e5e url('/images/skin5001/intro_0302.png') no-repeat 15px center; }
-.est .facility ul.floor li.current a { color: #ffffff; background: #4d4d4d url('/images/skin5001/intro_0302.png') no-repeat 15px center; }
-.est .facility .look { float: left; width: 70%; overflow: hidden; }
-.est .facility .look img { display: block; width: 100%; height: auto; }
-
-/*사이트맵*/
-table.f5_sitemap { clear: both; width: 100%; line-height: 1.5; margin-top: 50px; }
-table.f5_sitemap td.depth_1 { height: 60px; border-bottom: 1px solid #eeeeee; }
-table.f5_sitemap td.depth_1 p { font-size: 26px; color: #333333; }
-table.f5_sitemap td.depth_2 { height: 30px; }
-table.f5_sitemap td.depth_2 a { font-size: 13px; margin-left: 5px; color: #888888; position: relative; display: block; }
-table.f5_sitemap td.depth_2 a:hover { color: #333333; }
-table.f5_sitemap td.depth_2 a:before { content: ' '; position: absolute; width: 2px; height: 2px; background: #a1a1a1; top: 7px; left: -8px; }
-
-/* 2019-08-01 tab style modify */
-.menu3_tab { margin-bottom: 20px; }
-.menu3_tab ul:after { display:block; content:''; clear:both }
-.menu3_tab ul { border-bottom:1px solid #727272 }
-.menu3_tab ul li { display:block; float:left; height:48px; line-height:48px; margin-right:-1px; margin-bottom: 1px;}
-.menu3_tab ul li a {  display:block; height:48px; line-height:48px; padding:0 25px; font-size:15px; color:#363636; font-weight:normal; text-align:center; background:#fff; border:1px solid #727272 }
-.menu3_tab ul li a.on { background:#3f4044; color:#fff; border-color:#727272 }

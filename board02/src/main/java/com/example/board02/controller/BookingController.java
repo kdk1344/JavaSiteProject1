@@ -35,12 +35,10 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/board02/*")
 public class BookingController {
 	@Autowired
-	private BookingDAO bs;
-	
+	private BookingDAO bs;	
 	
 	
 	//¿¹¾à
-	
 	@PostMapping("/contract")
 	public String bookingDo(HttpSession session, BookingDTO bookingDto) {
 		bs.bookingDo(bookingDto);

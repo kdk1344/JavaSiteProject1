@@ -12,4 +12,5 @@ import com.example.board02.domain.dto.BoardMemberDTO;
 public interface BoardMemberDAO {
 	public void join(BoardMemberDTO boardmemberDTO);
 	public int loginMember(String id, String pw);
+	public int modifySave(BoardMemberDTO boardmemberDTO);
 }

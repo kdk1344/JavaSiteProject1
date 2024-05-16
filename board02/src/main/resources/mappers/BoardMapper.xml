@@ -17,7 +17,12 @@
 		WHERE ID = #{id}
 	</select>
 	
-
+	<update id="modifySave">
+		update TBLL_MEMBER set PW=#{pw},
+		Name=#{name}, EMAIL=#{email}
+		WHERE
+		ID=#{id}
+	</update>
 	
 </mapper>
 

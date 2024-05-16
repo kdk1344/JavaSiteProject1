@@ -1,5 +1,4 @@
 package com.example.board02.controller;
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,16 +24,6 @@ import com.example.board02.domain.dao.BoardDAO;
 
 import lombok.extern.log4j.Log4j;
 
-/*
- * Task			URL						Method			Parameter			Form						URL 이동
- * 
- * 전체 목록		/board/list				GET										
- * 등록 처리		/board/register		POST			모든 항목				입력화면 필요			이동
- * 조회			/board/read			GET				bno												
- * 삭제 처리		/board/remove		GET				bno					입력화면 필요			이동
- * 수정 처리		/board/modify		POST			모든 항목				입력화면 필요			이동
- */
-
 @Controller
 @Log4j
 @RequestMapping("/board02/*")
@@ -42,6 +31,7 @@ public class BoardController {
 	@Autowired
 	private BoardDAO boardService;
 	
+	//게시판 이동
 	@GetMapping("/sangdam")
 	public String list(Criteria criteria, Model model) {
 		log.info("/sangdam");
@@ -50,20 +40,17 @@ public class BoardController {
 		return "sangdam";
 	}
 	
+	//글 등록
 	@PostMapping("/register")
 	public String register(BoardDTO boardDTO, RedirectAttributes rttr) {
 		log.info("/register : " + boardDTO);
 		boardService.register(boardDTO);
-		
-//		Flash라는 영역은 Session에 생기고, redirect로 전송할 때 request영역이 초기화 된다.
-//		초기화 되기 전에 Flash영역에 데이터를 저장해놓고, 초기화된 후 Flash영역에서 데이터를 가지고 온다.
-//		데이터를 가져왔다면, Flash 영역에 있던 데이터는 없어진다.
 		rttr.addFlashAttribute("bno", boardDTO.getBno());
 		log.info(boardDTO);
-//		redirect로 전송할 때에는 경로 앞에 "redirect:"을 붙여준다.
 		return "redirect:/board02/sangdam";
 	}
 	
+	//글 읽기
 	@GetMapping({"/read"})
 	public String read(Criteria criteria, Long bno, HttpServletRequest request, Model model) {
 		String url = request.getRequestURI();
@@ -72,6 +59,7 @@ public class BoardController {
 		return "read";
 	}
 	
+	//글 수정
 	@GetMapping({"/modify"})
 	public String modify(Criteria criteria, Long bno, HttpServletRequest request, Model model) {
 		String url = request.getRequestURI();
@@ -81,6 +69,7 @@ public class BoardController {
 		return "modify";
 	}
 	
+	//글 삭제
 	@GetMapping("/remove")
 	public String remove(Long bno, RedirectAttributes rttr) {
 		log.info("/remove : " + bno);
@@ -92,6 +81,7 @@ public class BoardController {
 		return "redirect:/board02/sangdam";
 	}
 	
+	//글 수정
 	@PostMapping("/modify")
 	public String modify(Criteria criteria, BoardVO boardVO, RedirectAttributes rttr) {
 		log.info("/modify : " + boardVO);
@@ -117,8 +107,7 @@ public class BoardController {
 		return boardService.getFiles(bno);
 	}
 	
-	//답글쓰기
-	
+	//답글쓰기	
 	@GetMapping("/answer")
 	public String answer(Model model, Long bno) {
 		model.addAttribute("board",  boardService.get(bno));

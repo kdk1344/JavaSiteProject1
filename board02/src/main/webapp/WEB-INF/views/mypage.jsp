@@ -23,14 +23,10 @@ form, fieldset, input, table, tr, th, td {
 	  font-weight:bold;
 	  padding-top:30px;
 	}
-	
-	/* The container <div> - needed to position the dropdown content */
 	.dropdown {
 	  position: relative;
 	  display: inline-block;
 	}
-	
-	/* Dropdown Content (Hidden by Default) */
 	.dropdown-content {
 	  display: none;
 	  position: absolute;
@@ -39,8 +35,6 @@ form, fieldset, input, table, tr, th, td {
 	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	  z-index: 1;
 	}
-	
-	/* Links inside the dropdown */
 	.dropdown-content a {
 	  color: black;
 	  padding: 12px 16px;
@@ -48,11 +42,7 @@ form, fieldset, input, table, tr, th, td {
 	  display: block;
 	  text-align:center;
 	}
-	
-	/* Change color of dropdown links on hover */
 	.dropdown-content a:hover {background-color: #f1f1f1}
-	
-	/* Show the dropdown menu on hover */
 	.dropdown:hover .dropdown-content {
 	  display: block;
 	}
@@ -125,13 +115,8 @@ form, fieldset, input, table, tr, th, td {
 	<div id="wrap">
 		<!-- header -->
 		<div class="header">
-
-
-	<!-- head_bar_1 -->
 			<div class="head_bar_1">
-				<!-- head_quick -->
 				<div class="head_quick">
-					<!-- member -->
 					<ul class="member">
 						<li><a href="/board02/logout">LOGOUT</a></li>
 					</ul>
@@ -140,16 +125,9 @@ form, fieldset, input, table, tr, th, td {
 					</ul>
 				</div>
 			</div>
-		<!-- /head_bar_1 -->
-
-		<!-- head_bar_2 -->
 			<div class="head_bar_2">
-				<!-- head_cont -->
 				<div class="head_cont">
-					<!-- h1 -->
 					<h1><a href="/board02/list"><img src="/resources/images/sm.png" alt="열린이비인후과 로고" width="240" height="70"></a></h1>
-					<!-- /h1 -->
-					<!-- nav -->
 					<div class="nav">
 						<ul class="gnb">
 							<div class="dropdown">
@@ -177,129 +155,90 @@ form, fieldset, input, table, tr, th, td {
 							</div>
 						</ul>
 					</div>
-					<!-- /nav -->
 				</div>
-				<!-- /head_cont -->
 			</div>
-		<!-- /head_bar_2 -->
-	</div>
-	<!-- /header -->
-
-	<div class="contents">
-
-			<!-- sub_visual -->
+		</div>
+		<div class="contents">
 			<div class="sub_visual_area">
 				<div class="sub_visual"></div>
 			</div>
-			<!-- sub_visual -->
-
-			<!-- sub_container -->
 			<div class="sub_container">
-
-		<!-- sub_left -->
-		<div id="sub_left">
-			<h2>마이페이지</h2>
-			<!-- snb -->
-			<div class="snb">
-				<ul>
-					<li><a "on" href="/board02/mypage">예약정보</a></li>
-			</ul>
-			</div>
-		<!-- /snb -->
-		<!-- sub_time -->
-			<div class="sub_time">
-				<h3>진료시간</h3>
-				<ul>
-					<li><span>평일</span> 09:00 ~ 19:00</li>
-					<li><span>토요일</span> 09:00 ~ 15:00</li>
-					<li><span>점심시간</span> 13:00 ~ 14:00</li>
-				</ul>
-				<p>목요일 13:00 ~ 21:00 (야간진료)
-				일/공휴일 휴진</p>
-			</div>
-			<!-- sub_time -->
-			<!-- sub_call -->
-			<div class="sub_call ">
-				<p>032-765-7510</p>
-			</div>
-			<!-- /sub_call -->
-			<!-- sub_call -->
-			<div class="sub_sm_call ">
-				<p><!-- Tel. 02-550-8703 --></p>
-				<p><!-- Fax. 02-550-8703 --></p>
-			</div>
-			<!-- /sub_call -->
-		</div>
-				<!-- /sub_left -->
-
-		<!-- sub_contents -->
-		<div id="sub_contents">
-			<!-- sub_head -->
-			<div class="sub_head">
-				<h3><span>진료예약</span></h3>
-				<ul>
-					<li>마이페이지  >  예약정보</li>
-				</ul>
-			</div>
-			<!-- /sub_head -->
-
-			<!-- sub_con_section -->
-			<div class="sub_con_area">
-
-
-<!-- 인트로 CSS 추가 -->
-<link rel="stylesheet" type="text/css" href="/resources/assets/css/intro_ver_2016.css" >
-<!-- 인사말 -->
-
-<div class="cms_skin">    
-	<section class="bf_mg">
-		<div>
-			<input type="hidden" value="${booking.bookingId}" readonly="readonly">
-		</div>
-	</section>
-	<c:choose>
-		<c:when test="${empty booking}">
-	  			예약 정보가 없습니다.
-	  	</c:when>
-		<c:otherwise>
-			<div class="table-wrapper">
-				<table>
-					<thead>
-						<tr class="tHead">
-							<th class="writer">예약자</th>
-							<th class="regDate">예약일</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="tbody">
-							<td class="writer">${booking.bookname}</td>
-							<td class="regDate">${booking.bookDate}</td>							
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<form action="/board02/bookDelete" name="deleteForm">
-				<input type="hidden" name="userId" value="${booking.userId}" readonly="readonly">
-				<input type="submit" class="button" value="취소"/>			
-			</form>
-	    </c:otherwise>
-	 </c:choose>
-</div>
-
-					<!-- /sub_con_section -->
+				<div id="sub_left">
+					<h2>기타</h2>
+					<div class="snb">
+						<ul>
+							<li><a "on" href="/board02/mypage">마이페이지</a></li>
+							<li><a href="/board02/inform">정보수정</a></li>
+						</ul>
+					</div>
+					<div class="sub_time">
+						<h3>진료시간</h3>
+						<ul>
+							<li><span>평일</span> 09:00 ~ 19:00</li>
+							<li><span>토요일</span> 09:00 ~ 15:00</li>
+							<li><span>점심시간</span> 13:00 ~ 14:00</li>
+						</ul>
+						<p>목요일 13:00 ~ 21:00 (야간진료)
+						일/공휴일 휴진</p>
+					</div>
+					<div class="sub_call ">
+						<p>032-765-7510</p>
+					</div>
+					<div class="sub_sm_call ">
+						<p><!-- Tel. 02-550-8703 --></p>
+						<p><!-- Fax. 02-550-8703 --></p>
+					</div>
 				</div>
-				<!-- /sub_contents -->
+				<div id="sub_contents">
+					<div class="sub_head">
+						<h3><span>예약정보</span></h3>
+						<ul>
+							<li>마이페이지  >  예약정보</li>
+						</ul>
+					</div>
+						<div class="sub_con_area">
+							<div class="cms_skin">    
+								<section class="bf_mg">
+									<div>
+										<input type="hidden" value="${booking.bookingId}" readonly="readonly">
+									</div>
+								</section>
+								<c:choose>
+									<c:when test="${empty booking}">
+								  			예약 정보가 없습니다.
+								  	</c:when>
+									<c:otherwise>
+										<div class="table-wrapper">
+											<table>
+												<thead>
+													<tr class="tHead">
+														<th class="writer">예약자</th>
+														<th class="regDate">예약일</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr class="tbody">
+														<td class="writer">${booking.bookname}</td>
+														<td class="regDate">${booking.bookDate}</td>							
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<form action="/board02/bookDelete" name="deleteForm">
+											<input type="hidden" name="userId" value="${booking.userId}" readonly="readonly">
+											<input type="submit" class="button" value="취소"/>			
+										</form>
+								    </c:otherwise>
+								 </c:choose>
+							</div>
+					</div>
+				</div>
 			</div>
-			<!-- /sub_container -->
 		</div>
-
-
-
 		<!-- /footer -->
 		<div class="footer">
 			<!-- foot_cont -->
 			<div class="foot_cont">
-				<!-- copyright -->
 				<div class="copyright">
 					<ul>
 						<li><a href="javascript:;" onclick="OpenMemberPrivate();">개인정보처리방침</a></li>
@@ -307,26 +246,12 @@ form, fieldset, input, table, tr, th, td {
 						<li><a href="/Module/Intro/Sitemap.asp">사이트맵</a></li>
 					</ul>
 					<address>
-						인천 중구 우현로 75 (인현동, 눈편한안과,상아치과,포도나무약국)  &nbsp;열린이비인후과<br>TEL.032-765-7510&nbsp;&nbsp;&nbsp;
+						OO O구 OO로 00 (OOO)  &nbsp;스마트 웰니스<br>TEL.000-000-0000&nbsp;&nbsp;&nbsp;
 					</address>
 				</div>
-				<!-- /copyright -->
-
-
-				<!-- banner -->
-				<div class="banner">
-					<ul>
-						<li><div id="rolling2"></div></li>
-						<li><div id="rolling1"></div></li>
-					</ul>
-				</div>
-				<!-- /banner -->
-
-
 			</div>
-			<!-- /foot_cont -->
 		</div>
 		<!-- /footer -->
-
+	</div>
 </body>
 </html>

@@ -18,5 +18,5 @@ public interface BoardMapper {
 	
 	public void insert(BoardMemberDTO boardmemberDTO);
 	public BoardMemberDTO read(String id);
-
+	public int modifySave(BoardMemberDTO boardmemberDTO);
 }

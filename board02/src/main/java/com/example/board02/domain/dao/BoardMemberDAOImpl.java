@@ -45,6 +45,18 @@ public class BoardMemberDAOImpl implements BoardMemberDAO{
 
 	}
 
+	@Override
+	public int modifySave(BoardMemberDTO boardmemberDTO) {
+		int result = 0;          
+		try {
+			result = boardmapper.modifySave(boardmemberDTO);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		log.info(result);
+		return result;
+	}
+
 
 	
 	
