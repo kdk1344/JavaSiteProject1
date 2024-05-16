@@ -10,6 +10,6 @@
 - 웹서버 : Tomcat 활용
 - HTML, CSS, JavaScript, JQuery를 활용한 화면단 개발
 - spring framework 을 이용한 web application 개발
-- ajax API 사용 ( openweather, 서울시 지하철 승하차 )
+- ajax API 사용 ( openweather)
 
 https://youtu.be/4zcgNhndxp8
